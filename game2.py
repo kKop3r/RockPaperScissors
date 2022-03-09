@@ -11,6 +11,7 @@ while i < 1:
       os.system(command)
 
   import random
+  import time
 
   CHOICES = ["rock", "paper", "scissors"]
 
@@ -57,3 +58,4 @@ while i < 1:
     print("")
     print("")
     clearConsole()
+    time.sleep(0.5)
