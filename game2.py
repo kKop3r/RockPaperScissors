@@ -19,7 +19,7 @@ while i < 2:
 
     if user_choice in CHOICES:
         computer_choice = random.choice(CHOICES)
-        print(f"\nYou threw  '{user_choice}', the computer threw '{computer_choice}'")
+        print(f"\nYou threw '{user_choice}', the computer threw '{computer_choice}'")
     else:
         print(f"\nYou typed '{user_choice}', which isnt a valid throw.")
 
@@ -40,10 +40,10 @@ while i < 2:
     if user_choice == "paper" and computer_choice == "rock":
         print("User won!")
 
-    if user_choice == "rock" and computer_choice == "scissors":
+    elif user_choice == "rock" and computer_choice == "scissors":
         print("User won!")
 
-    if user_choice == "scissors" and computer_choice == "paper":
+    elif user_choice == "scissors" and computer_choice == "paper":
         print("User won!")
 
     print("Play again?")
@@ -51,7 +51,10 @@ while i < 2:
     if p_again == "N" or p_again == "n":
         i = 5
 
-    if p_again == "Y" or p_again == "y":
+    elif p_again == "Y" or p_again == "y":
         print("")
         print("")
         clearConsole()
+    else:
+        print("Incorrect input!")
+        exit()
