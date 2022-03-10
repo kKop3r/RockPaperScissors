@@ -1,61 +1,57 @@
 # rpc.py
 i = 0
-while i < 1:
-  
-  import os
+while i < 2:
 
-  def clearConsole():
-      command = 'clear'
-      if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
-          command = 'cls'
-      os.system(command)
+    import os
 
-  import random
-  import time
+    def clearConsole():
+        command = "clear"
+        if os.name in ("nt", "dos"):  # If Machine is running on Windows, use cls
+            command = "cls"
+        os.system(command)
 
-  CHOICES = ["rock", "paper", "scissors"]
+    import random
 
-  print("Make your throw!")
-  user_choice = input(  "Type rock, paper, or scissors: ")
+    CHOICES = ["rock", "paper", "scissors"]
 
-  if user_choice in CHOICES:
-    computer_choice = random.choice(CHOICES)
-    print(
-      f"\nYou threw  '{user_choice}', the computer threw '{computer_choice}'"
-    )
-  else:
-    print(f"\nYou typed '{user_choice}', which isnt a valid throw.")
+    print("Make your throw!")
+    user_choice = input("Type rock, paper, or scissors: ")
 
-#WINS AND LOSES
+    if user_choice in CHOICES:
+        computer_choice = random.choice(CHOICES)
+        print(f"\nYou threw  '{user_choice}', the computer threw '{computer_choice}'")
+    else:
+        print(f"\nYou typed '{user_choice}', which isnt a valid throw.")
 
-#COMPUTER WINS
-  if  user_choice == "rock" and computer_choice == "paper":
-    print("Computer won!")
+    # WINS AND LOSES
 
-  if  user_choice == "scissors" and computer_choice == "rock":
-    print("Computer won!")
+    # COMPUTER WINS
+    if user_choice == "rock" and computer_choice == "paper":
+        print("Computer won!")
 
-  if  user_choice == "paper" and computer_choice == "scissors":
-    print("Computer won!")
+    if user_choice == "scissors" and computer_choice == "rock":
+        print("Computer won!")
 
-#USER WINS
+    if user_choice == "paper" and computer_choice == "scissors":
+        print("Computer won!")
 
-  if  user_choice == "paper" and computer_choice == "rock":
-    print("User won!")
+    # USER WINS
 
-  if  user_choice == "rock" and computer_choice == "scissors":
-    print("User won!")
+    if user_choice == "paper" and computer_choice == "rock":
+        print("User won!")
 
-  if  user_choice == "scissors" and computer_choice == "paper":
-    print("User won!")
+    if user_choice == "rock" and computer_choice == "scissors":
+        print("User won!")
 
-  print("Play again?")
-  p_again = input("Y/N  ")
-  if p_again == "N" or "n":
-    i = 5
+    if user_choice == "scissors" and computer_choice == "paper":
+        print("User won!")
 
-  if p_again == "Y" or "y":
-    print("")
-    print("")
-    clearConsole()
-    time.sleep(0.5)
+    print("Play again?")
+    p_again = input("Y/N  ")
+    if p_again == "N" or p_again == "n":
+        i = 5
+
+    if p_again == "Y" or p_again == "y":
+        print("")
+        print("")
+        clearConsole()
