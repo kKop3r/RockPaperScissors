@@ -1,0 +1,66 @@
+# rpc.py
+i = 0
+while i < 2:
+
+    import os
+
+    def clearConsole():
+        command = "clear"
+        if os.name in ("nt", "dos"):  # If Machine is running on Windows, use cls
+            command = "cls"
+        os.system(command)
+
+    import random
+
+    CHOICES = ["rock", "paper", "scissors"]
+
+    print("Make your throw!")
+    user_choice = input("Type rock, paper, or scissors: ")
+
+    if user_choice in CHOICES:
+        computer_choice = random.choice(CHOICES)
+        print(f"\nYou threw '{user_choice}', the computer threw '{computer_choice}'")
+    else:
+        print(f"\nYou typed '{user_choice}', which isnt a valid throw.")
+
+    # WINS AND LOSES
+
+    # COMPUTER WINS
+    if user_choice == "rock" and computer_choice == "paper":
+        print("Computer won!")
+
+    if user_choice == "scissors" and computer_choice == "rock":
+        print("Computer won!")
+
+    if user_choice == "paper" and computer_choice == "scissors":
+        print("Computer won!")
+
+    # USER WINS
+
+    if user_choice == "paper" and computer_choice == "rock":
+        print("User won!")
+
+    elif user_choice == "rock" and computer_choice == "scissors":
+        print("User won!")
+
+    elif user_choice == "scissors" and computer_choice == "paper":
+        print("User won!")
+  
+    compare_if_draw = computer_choice == user_choice
+  
+    if compare_if_draw == True:
+      print("Draw!")
+
+    print("Play again?")
+    p_again = input("Y/N  ")
+    if p_again == "N" or p_again == "n":
+        i = 5
+
+    elif p_again == "Y" or p_again == "y":
+        print("")
+        print("")
+        clearConsole()
+    else:
+        print("Incorrect input!")
+        exit()
+      
